@@ -28,6 +28,15 @@ static unsigned int parse_seconds(const char *arg, unsigned int fallback)
 
 int main(int argc, char *argv[])
 {
+printf("=========================================\n");
+printf("OS JACKFRUIT MINI PROJECT\n");
+printf("Member 1: KULAKARNI VIJAYEENDRA\n");
+printf("SRN     : PES2UG24CS244\n\n");
+printf("Member 2: KRISHNA PRAJOTH G\n");
+printf("SRN     : PES2UG24CS237\n");
+printf("=========================================\n");
+
+
     const unsigned int duration = (argc > 1) ? parse_seconds(argv[1], 10) : 10;
     const time_t start = time(NULL);
     time_t last_report = start;
