@@ -1,5 +1,6 @@
 Multi-Container Runtime (OS Jackfruit Project)
 1. Team Information
+
 Team Member 1: KULAKARNI VIJAYEENDRA
 
 SRN: PES2UG24CS244
@@ -9,32 +10,59 @@ Team Member 2: KRISHNA PRAJOTH G
 SRN: PES2UG24CS237
 
 2. Build, Load, and Run Instructions
+
 Build the Project
+
 make
+
 Load Kernel Module
+
 sudo insmod monitor.ko
+
 Verify Device Creation
+
 ls /dev/container_monitor
+
 Start Supervisor
+
 sudo ./engine supervisor ./rootfs-base
+
 Create Root Filesystems
+
 cp -a ./rootfs-base ./rootfs-alpha
+
 cp -a ./rootfs-base ./rootfs-beta
+
 Start Containers
+
 sudo ./engine start alpha ./rootfs-alpha /bin/sh
+
 sudo ./engine start beta ./rootfs-beta /bin/sh
+
 View Running Containers
+
 sudo ./engine ps
+
 Run Workloads
+
 cp cpu_hog ./rootfs-alpha/
+
 sudo ./engine start alpha ./rootfs-alpha /cpu_hog
+
 View Logs
+
 cat logs/alpha.log
+
 Stop Containers
+
 sudo ./engine stop alpha
+
 sudo ./engine stop beta
+
 Unload Kernel Module
+
 sudo rmmod monitor
+
 3. Demo with Screenshots
 
 ## Screenshots
